@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEXARA CIVILIZATION PORTAL</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #06111d;
+    color: #eaf7ff;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 35px 10px;
+    background: linear-gradient(145deg, #102d43, #071522);
+    border: 1px solid #00d9ff;
+    border-radius: 18px;
+    margin-bottom: 25px;
+}
+
+header h1 {
+    color: #00e5ff;
+    font-size: 27px;
+    letter-spacing: 3px;
+}
+
+header p {
+    color: #a8c2d5;
+    margin-top: 12px;
+}
+
+.back {
+    display: inline-block;
+    color: #00e5ff;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #00e5ff;
+    margin: 25px 0 15px;
+    font-size: 19px;
+}
+
+.portal-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px;
+}
+
+.portal-card {
+    background: #102334;
+    border: 1px solid #17445b;
+    border-radius: 14px;
+    padding: 17px;
+    min-height: 145px;
+}
+
+.portal-card h3 {
+    color: #00e5ff;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.portal-card p {
+    color: #b8cbd8;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.info {
+    background: #102334;
+    padding: 20px;
+    border-radius: 14px;
+    border-left: 4px solid #00e5ff;
+    line-height: 1.8;
+    color: #b8cbd8;
+}
+
+footer {
+    text-align: center;
+    color: #658399;
+    margin-top: 35px;
+    font-size: 12px;
+}
+
+@media(max-width:380px) {
+    .portal-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.portal-card {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.portal-card:active {
+    transform: scale(0.97);
+    border-color: #00e5ff;
+}
+
+.portal-card::after {
+    content: "EXPLORE SYSTEM →";
+    display: block;
+    color: #00e5ff;
+    font-size: 10px;
+    margin-top: 15px;
+    letter-spacing: 1px;
+}
+</style>
+</head>
+
+<body>
+
+<a href="index.html" class="back">← KEMBALI KE DASHBOARD</a>
+
+<header>
+    <h1>NEXARA 2100</h1>
+    <p>CIVILIZATION PORTAL</p>
+    <p>Welcome to the future of humanity</p>
+</header>
+
+<h2>🌍 CIVILIZATION OVERVIEW</h2>
+
+<div class="info">
+    NEXARA 2100 adalah konsep peradaban masa depan
+    yang mengutamakan kemajuan teknologi, kesejahteraan
+    manusia, perdamaian, dan kelestarian bumi.
+</div>
+
+<h2>🏛️ NATIONAL SYSTEMS</h2>
+
+<div class="portal-grid">
+
+    <a href="systems.html#government" class="portal-card">
+        <h3>🏛️ GOVERNMENT</h3>
+        <p>Pemerintahan transparan, adil, dan berorientasi
+        pada kesejahteraan seluruh masyarakat.</p>
+    </a>
+
+    <a href="systems.html#economy" class="portal-card">
+        <h3>💰 ECONOMY</h3>
+        <p>Ekonomi campuran yang menggabungkan inovasi,
+        industri, pertanian, dan pemerataan kesejahteraan.</p>
+    </a>
+
+    <a href="systems.html#education" class="portal-card">
+        <h3>🎓 EDUCATION</h3>
+        <p>Pendidikan gratis dengan AI sebagai pendamping
+        belajar setiap warga.</p>
+    </a>
+
+    <a href="systems.html#healthcare" class="portal-card">
+        <h3>🏥 HEALTHCARE</h3>
+        <p>Layanan kesehatan universal dengan dukungan
+        teknologi medis dan robotik.</p>
+    </a>
+
+    <a href="systems.html#technology" class="portal-card">
+        <h3>🤖 TECHNOLOGY</h3>
+        <p>AI, robotika, bioteknologi, dan inovasi untuk
+        membantu kehidupan manusia.</p>
+    </a>
+
+    <a href="systems.html#environment" class="portal-card">
+        <h3>🌱 ENVIRONMENT</h3>
+        <p>50% kawasan hijau, energi bersih, dan perlindungan
+        ekosistem bumi.</p>
+    </a>
+
+    <a href="systems.html#space" class="portal-card">
+        <h3>🚀 SPACE PROGRAM</h3>
+        <p>Eksplorasi Bulan, Mars, dan pengembangan
+        teknologi antariksa.</p>
+    </a>
+
+    <a href="systems.html#diplomacy" class="portal-card">
+        <h3>🕊️ DIPLOMACY</h3>
+        <p>Kerja sama internasional, perdamaian, dan
+        hubungan antarnegara.</p>
+    </a>
+
+</div>
+
+<h2>✨ THE VISION</h2>
+
+<div class="info">
+    "A civilization where technology serves humanity,
+    progress protects nature, and prosperity belongs
+    to everyone."
+    <br><br>
+    <b style="color:#00e5ff;">NEXARA 2100 WALUH</b>
+    <br>
+    Founded by Perdian Nirmansyah
+</div>
+
+<footer>
+    NEXARA CIVILIZATION PROJECT © 2100
+</footer>
+
+</body>
+</html>
+

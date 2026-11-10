@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEXARA 2100</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #07111f;
+    color: #eafaff;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 35px 10px;
+}
+
+header h1 {
+    color: #00e5ff;
+    font-size: 35px;
+    letter-spacing: 5px;
+}
+
+header p {
+    color: #91a9ba;
+    margin-top: 10px;
+}
+
+.founder {
+    color: #00e5ff;
+    margin-top: 18px;
+    font-size: 13px;
+}
+
+.clock-box {
+    background: #102238;
+    border: 1px solid #00bcd4;
+    border-radius: 15px;
+    padding: 22px;
+    text-align: center;
+    margin: 10px auto 25px;
+    max-width: 500px;
+}
+
+.clock-box h2 {
+    color: #00e5ff;
+    font-size: 35px;
+    letter-spacing: 3px;
+}
+
+.clock-box p {
+    color: #91a9ba;
+    margin-bottom: 10px;
+}
+
+h2.section-title {
+    margin: 25px 0 15px;
+    color: #00e5ff;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.card {
+    background: #102238;
+    border: 1px solid #1c526b;
+    border-radius: 12px;
+    padding: 20px 12px;
+    text-align: center;
+}
+
+.card h3 {
+    font-size: 14px;
+    color: #a9c6d6;
+    margin-bottom: 12px;
+}
+
+.value {
+    font-size: 24px;
+    color: #00e5ff;
+    font-weight: bold;
+}
+
+.program {
+    background: #102238;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border-left: 3px solid #00e5ff;
+}
+
+button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 16px;
+    border: none;
+    border-radius: 10px;
+    background: #00cce5;
+    color: #07111f;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    color: #71899b;
+    font-size: 12px;
+    margin-top: 35px;
+    padding-bottom: 20px;
+}
+
+.progress-box {
+    background: #102238;
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 15px;
+}
+
+.progress-title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    color: #c9e8f5;
+}
+
+.progress-bar {
+    height: 12px;
+    background: #25394c;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 50%;
+    background: #00e5ff;
+    border-radius: 20px;
+    transition: width 0.5s;
+}
+
+#status {
+    color: #00e5ff;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.city-image {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 1px solid #00e5ff;
+    margin-top: 20px;
+    box-shadow: 0 0 20px #00e5ff55;
+}
+
+.city-image {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 1px solid #00e5ff;
+    margin-top: 20px;
+}
+
+/* NEXARA UI REDESIGN */
+
+.progress-box {
+    background: linear-gradient(145deg, #102334, #071522);
+    border: 1px solid rgba(0, 229, 255, 0.3);
+    border-radius: 16px;
+    padding: 20px;
+    margin: 16px 0;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+}
+
+.progress-box h3 {
+    color: #00e5ff;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.progress-box p {
+    color: #c1d3df;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.section-title {
+    color: #00e5ff;
+    font-size: 21px;
+    letter-spacing: 1.5px;
+    margin: 30px 0 18px;
+    border-left: 4px solid #00e5ff;
+    padding-left: 12px;
+}
+
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.program-grid .progress-box {
+    margin: 0;
+    padding: 16px;
+    min-width: 0;
+}
+
+.program-grid .progress-box h3 {
+    font-size: 13px;
+}
+
+.program-grid .progress-box p {
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+@media (max-width: 380px) {
+    .program-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.explore-btn {
+    display: inline-block;
+    background: linear-gradient(90deg, #00bcd4, #0066ff);
+    color: white;
+    text-decoration: none;
+    padding: 14px 25px;
+    border-radius: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-top: 15px;
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>NEXARA 2100</h1>
+    <p>Future Civilization Dashboard</p>
+
+    <div class="founder">
+        FOUNDER: PERDIAN NIRMANSYAH
+    </div>
+
+<img src="nexara-city.png"
+     alt="NEXARA PRIME 2100"
+     class="city-image">
+
+<img src="nexara-city.png" class="city-image" alt="NEXARA PRIME 2100">
+</header>
+
+<div class="clock-box">
+    <p>WAKTU SEKARANG</p>
+    <h2 id="clock">00:00:00</h2>
+    <p id="date">Memuat tanggal...</p>
+</div>
+
+<h2 class="section-title">STATISTIK PERADABAN</h2>
+
+<div class="grid">
+    <div class="card">
+        <h3>POPULASI TARGET</h3>
+        <div class="value">100M</div>
+    </div>
+
+    <div class="card">
+        <h3>GREEN ZONE</h3>
+        <div class="value">50%</div>
+    </div>
+
+    <div class="card">
+        <h3>ENERGI</h3>
+        <div class="value">100%</div>
+    </div>
+
+    <div class="card">
+        <h3>TEKNOLOGI</h3>
+        <div class="value">AI + ROBOTICS</div>
+    </div>
+</div>
+
+<h2 class="section-title">PROGRAM PERADABAN</h2>
+
+<div class="program">🤖 AI dan Robotika</div>
+<div class="program">🎓 Pendidikan Gratis dengan AI</div>
+<div class="program">🏥 Kesehatan Universal</div>
+<div class="program">🚀 Eksplorasi Antariksa</div>
+<div class="program">🌳 Pelestarian Lingkungan</div>
+
+<a href="explore.html" class="explore-btn">
+    EXPLORE NEXARA →
+</a>
+
+<footer>
+    NEXARA 2100 · Civilization Project
+    <br>
+    Designed by Perdian Nirmansyah
+
+<h2 class="section-title">CIVILIZATION DEVELOPMENT</h2>
+
+<div class="progress-box">
+    <div class="progress-title">
+        <span>🌳 Green Environment</span>
+        <span id="green-value">50%</span>
+    </div>
+    <div class="progress-bar">
+        <div class="progress-fill" id="green-bar"></div>
+    </div>
+</div>
+
+<div class="progress-box">
+    <div class="progress-title">
+        <span>⚡ Energy Development</span>
+        <span id="energy-value">100%</span>
+    </div>
+    <div class="progress-bar">
+        <div class="progress-fill" id="energy-bar"></div>
+    </div>
+</div>
+
+<div class="progress-box">
+    <div class="progress-title">
+        <span>🤖 Technology Development</span>
+        <span id="tech-value">25%</span>
+    </div>
+    <div class="progress-bar">
+        <div class="progress-fill" id="tech-bar"></div>
+    </div>
+</div>
+
+<button onclick="runSimulation()">
+    RUN CIVILIZATION SIMULATION
+</button>
+
+<h3 id="status">CIVILIZATION STATUS: STABLE</h3>
+
+<h2 class="section-title">CIVILIZATION TIMELINE</h2>
+
+<div class="progress-box">
+    <h3>📅 CURRENT YEAR</h3>
+    <h2 id="year" style="color:#00e5ff;">2100</h2>
+
+    <button onclick="advanceYear()">
+        ADVANCE ONE YEAR
+    </button>
+</div>
+
+<div class="progress-box">
+    <h3>📜 HISTORY LOG</h3>
+    <p id="history">NEXARA 2100 resmi didirikan.</p>
+</div>
+
+<h2 class="section-title">NATIONAL ECONOMY</h2>
+
+<div class="grid">
+
+    <div class="card">
+        <h3>💰 NATIONAL BUDGET</h3>
+        <div class="value" id="budget">500 B</div>
+    </div>
+
+    <div class="card">
+        <h3>📈 NATIONAL INCOME</h3>
+        <div class="value">80 B</div>
+    </div>
+
+    <div class="card">
+        <h3>📉 EXPENDITURE</h3>
+        <div class="value">50 B</div>
+    </div>
+
+    <div class="card">
+        <h3>🏗️ DEVELOPMENT FUND</h3>
+        <div class="value" id="fund">100 B</div>
+    </div>
+
+</div>
+
+<div class="progress-box" style="margin-top:15px;">
+    <h3>ECONOMIC CONTROL CENTER</h3>
+
+    <button onclick="invest()">INVEST IN DEVELOPMENT</button>
+
+    <button onclick="nextFiscalYear()">
+        NEXT FISCAL YEAR
+    </button>
+
+    <h3 id="economy-status" style="color:#00e5ff;margin-top:20px;">
+        ECONOMY STATUS: STABLE
+    </h3>
+</div>
+
+<h2 class="section-title">GOVERNMENT CENTER</h2>
+
+<div class="progress-box">
+    <h3>🏛️ NATIONAL GOVERNMENT</h3>
+    <p style="margin-top:10px;">Supreme Leader: President of NEXARA</p>
+    <p style="margin-top:8px;">Government System: Democratic Republic</p>
+    <p style="margin-top:8px;">National Stability: <span style="color:#00e5ff;">STABLE</span></p>
+</div>
+
+<h3 style="margin:20px 0 12px;color:#00e5ff;">
+    PUBLIC POLICY
+</h3>
+
+<div class="program">
+    🎓 Free Education Program
+    <button onclick="policyEducation()">IMPLEMENT POLICY</button>
+</div>
+
+<div class="program">
+    🏥 Universal Healthcare
+    <button onclick="policyHealth()">IMPLEMENT POLICY</button>
+</div>
+
+<div class="program">
+    🌳 Environmental Protection
+    <button onclick="policyEnvironment()">IMPLEMENT POLICY</button>
+</div>
+
+<div class="progress-box">
+    <h3>📜 GOVERNMENT ANNOUNCEMENT</h3>
+    <p id="government-message" style="margin-top:12px;">
+        Government is ready to serve the people.
+    </p>
+</div>
+
+<h2 class="section-title">POPULATION SYSTEM</h2>
+
+<div class="grid">
+
+    <div class="card">
+        <h3>👥 TOTAL POPULATION</h3>
+        <div class="value" id="population">100 M</div>
+    </div>
+
+    <div class="card">
+        <h3>👶 BIRTHS / YEAR</h3>
+        <div class="value" id="births">2 M</div>
+    </div>
+
+    <div class="card">
+        <h3>⚰️ DEATHS / YEAR</h3>
+        <div class="value" id="deaths">0.8 M</div>
+    </div>
+
+    <div class="card">
+        <h3>😊 HAPPINESS</h3>
+        <div class="value" id="happiness">85%</div>
+    </div>
+
+</div>
+
+<div class="progress-box" style="margin-top:15px;">
+    <h3>POPULATION CONTROL CENTER</h3>
+
+    <button onclick="simulatePopulation()">
+        SIMULATE ONE YEAR
+    </button>
+
+    <h3 id="population-status"
+        style="color:#00e5ff;margin-top:20px;">
+        POPULATION STATUS: STABLE
+    </h3>
+</div>
+
+<h2 class="section-title">NEXARA SPACE CENTER</h2>
+
+<div class="progress-box">
+    <h3>🌌 SPACE EXPLORATION PROGRAM</h3>
+    <p style="color:#91a9ba;margin-top:10px;">
+        Humanity beyond Earth. Exploring the universe.
+    </p>
+</div>
+
+<div class="grid">
+
+    <div class="card">
+        <h3>🛰️ ACTIVE SATELLITES</h3>
+        <div class="value" id="satellites">24</div>
+    </div>
+
+    <div class="card">
+        <h3>🚀 ROCKET FLEET</h3>
+        <div class="value" id="rockets">12</div>
+    </div>
+
+    <div class="card">
+        <h3>🌕 MOON MISSIONS</h3>
+        <div class="value" id="moon">3</div>
+    </div>
+
+    <div class="card">
+        <h3>🔴 MARS MISSIONS</h3>
+        <div class="value" id="mars">1</div>
+    </div>
+
+</div>
+
+<div class="progress-box" style="margin-top:15px;">
+    <h3>MISSION CONTROL</h3>
+
+    <button onclick="launchSatellite()">
+        LAUNCH SATELLITE
+    </button>
+
+    <button onclick="launchMission()">
+        START SPACE MISSION
+    </button>
+
+    <p id="space-status" style="color:#00e5ff;margin-top:15px;">
+        SPACE PROGRAM: OPERATIONAL
+    </p>
+</div>
+
+<h2 class="section-title">DEFENSE & SECURITY CENTER</h2>
+
+<div class="progress-box">
+    <h3>🛡️ NATIONAL SECURITY</h3>
+    <p style="color:#91a9ba;margin-top:10px;">
+        Protecting humanity, preserving peace.
+    </p>
+    <h2 style="color:#00e5ff;margin-top:15px;">
+        <span id="security">98</span>%
+    </h2>
+    <p style="color:#91a9ba;">Security Index</p>
+</div>
+
+<div class="grid">
+
+    <div class="card">
+        <h3>🛡️ CIVIL PROTECTION</h3>
+        <div class="value" id="protection">95%</div>
+    </div>
+
+    <div class="card">
+        <h3>🌍 DISASTER RESPONSE</h3>
+        <div class="value" id="disaster">90%</div>
+    </div>
+
+    <div class="card">
+        <h3>🛰️ MONITORING SYSTEM</h3>
+        <div class="value" id="monitoring">85%</div>
+    </div>
+
+    <div class="card">
+        <h3>🚑 EMERGENCY UNITS</h3>
+        <div class="value" id="emergency">120</div>
+    </div>
+
+</div>
+
+<div class="progress-box" style="margin-top:15px;">
+    <h3>SECURITY CONTROL CENTER</h3>
+
+    <button onclick="improveSecurity()">
+        IMPROVE SECURITY SYSTEM
+    </button>
+
+    <button onclick="disasterSimulation()">
+        SIMULATE DISASTER RESPONSE
+    </button>
+
+    <p id="defense-status"
+       style="color:#00e5ff;margin-top:15px;">
+       PLANETARY SECURITY: STABLE
+    </p>
+</div>
+
+<h2 class="section-title">CIVILIZATION PROGRAMS</h2>
+
+<div class="progress-box">
+    <h3>🤖 AI & ROBOTICS</h3>
+    <p>
+        Mengembangkan kecerdasan buatan dan robot untuk
+        membantu manusia dalam pekerjaan, industri,
+        penelitian, dan kehidupan sehari-hari.
+    </p>
+</div>
+
+<div class="progress-box">
+    <h3>🎓 FREE AI EDUCATION</h3>
+    <p>
+        Memberikan pendidikan gratis bagi seluruh masyarakat.
+        AI menjadi pendamping belajar yang membantu setiap
+        orang mengembangkan kemampuan dan pengetahuannya.
+    </p>
+</div>
+
+<div class="progress-box">
+    <h3>🏥 UNIVERSAL HEALTHCARE</h3>
+    <p>
+        Menyediakan layanan kesehatan untuk semua orang.
+        Teknologi AI dan robotik membantu dokter dalam
+        pemeriksaan, perawatan, dan penelitian medis.
+    </p>
+</div>
+
+<div class="progress-box">
+    <h3>🌱 GREEN ENVIRONMENT</h3>
+    <p>
+        Menjaga 50% wilayah tetap menjadi kawasan hijau.
+        Mengembangkan energi bersih, melindungi hutan,
+        mengurangi polusi, dan menjaga keanekaragaman hayati.
+    </p>
+</div>
+
+<div class="progress-box">
+    <h3>🚀 SPACE EXPLORATION</h3>
+    <p>
+        Mengembangkan teknologi antariksa untuk menjelajahi
+        Bulan, Mars, dan wilayah luar angkasa lainnya.
+        Manusia dan robot bekerja sama dalam eksplorasi.
+    </p>
+</div>
+
+<div class="progress-box">
+    <h3>⚡ FUTURE ENERGY</h3>
+    <p>
+        Mengembangkan sumber energi bersih dan berkelanjutan
+        untuk memenuhi kebutuhan masyarakat dan industri
+        tanpa merusak lingkungan.
+    </p>
+</div>
+</footer>
+
+<script>
+function updateClock() {
+    const now = new Date();
+
+    document.getElementById("clock").textContent =
+        now.toLocaleTimeString("id-ID", {
+            hour12: false,
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit"
+        });
+
+    document.getElementById("date").textContent =
+        now.toLocaleDateString("id-ID", {
+            weekday: "long",
+            day: "numeric",
+            month: "long",
+            year: "numeric"
+        });
+}
+
+function welcome() {
+    alert("Selamat datang di masa depan NEXARA 2100!");
+}
+
+updateClock();
+setInterval(updateClock, 1000);
+
+let green = 50;
+let energy = 100;
+let tech = 25;
+
+function runSimulation() {
+    green = Math.min(green + 2, 100);
+    energy = Math.max(energy - 1, 0);
+    tech = Math.min(tech + 5, 100);
+
+    document.getElementById("green-value").textContent = green + "%";
+    document.getElementById("energy-value").textContent = energy + "%";
+    document.getElementById("tech-value").textContent = tech + "%";
+
+    document.getElementById("green-bar").style.width = green + "%";
+    document.getElementById("energy-bar").style.width = energy + "%";
+    document.getElementById("tech-bar").style.width = tech + "%";
+
+    document.getElementById("status").textContent =
+        "CIVILIZATION STATUS: DEVELOPMENT IN PROGRESS";
+}
+
+let currentYear = 2100;
+
+function advanceYear() {
+    currentYear++;
+
+    document.getElementById("year").textContent = currentYear;
+
+    document.getElementById("history").textContent =
+        "Tahun " + currentYear +
+        ": NEXARA terus berkembang menuju masa depan.";
+}
+
+let budget = 500;
+let fund = 100;
+
+function updateEconomy() {
+    document.getElementById("budget").textContent =
+        budget + " B";
+
+    document.getElementById("fund").textContent =
+        fund + " B";
+}
+
+function invest() {
+    if (budget >= 20) {
+        budget -= 20;
+        fund += 20;
+
+        document.getElementById("economy-status").textContent =
+            "INVESTMENT SUCCESSFUL!";
+    } else {
+        document.getElementById("economy-status").textContent =
+            "INSUFFICIENT NATIONAL BUDGET!";
+    }
+
+    updateEconomy();
+}
+
+function nextFiscalYear() {
+    budget += 30;
+
+    document.getElementById("economy-status").textContent =
+        "NEW FISCAL YEAR: ECONOMY GROWING!";
+
+    updateEconomy();
+}
+
+updateEconomy();
+
+function policyEducation() {
+    if (budget >= 30) {
+        budget -= 30;
+        document.getElementById("government-message").textContent =
+            "Education policy successfully implemented!";
+        updateEconomy();
+    } else {
+        document.getElementById("government-message").textContent =
+            "Not enough national budget!";
+    }
+}
+
+function policyHealth() {
+    if (budget >= 40) {
+        budget -= 40;
+        document.getElementById("government-message").textContent =
+            "Universal healthcare policy implemented!";
+        updateEconomy();
+    } else {
+        document.getElementById("government-message").textContent =
+            "Not enough national budget!";
+    }
+}
+
+function policyEnvironment() {
+    if (budget >= 25) {
+        budget -= 25;
+        document.getElementById("government-message").textContent =
+            "Environmental protection policy implemented!";
+        updateEconomy();
+    } else {
+        document.getElementById("government-message").textContent =
+            "Not enough national budget!";
+    }
+}
+
+let population = 100;
+let births = 2;
+let deaths = 0.8;
+let happiness = 85;
+
+function simulatePopulation() {
+
+    population += births - deaths;
+
+    happiness = Math.min(
+        100,
+        happiness + 1
+    );
+
+    document.getElementById("population").textContent =
+        population.toFixed(2) + " M";
+
+    document.getElementById("births").textContent =
+        births.toFixed(2) + " M";
+
+    document.getElementById("deaths").textContent =
+        deaths.toFixed(2) + " M";
+
+    document.getElementById("happiness").textContent =
+        happiness + "%";
+
+    document.getElementById("population-status").textContent =
+        "POPULATION STATUS: GROWING";
+}
+
+let satellites = 24;
+let rockets = 12;
+let moon = 3;
+let mars = 1;
+
+function launchSatellite() {
+    if (rockets > 0) {
+        satellites++;
+        rockets--;
+
+        document.getElementById("satellites").textContent =
+            satellites;
+
+        document.getElementById("rockets").textContent =
+            rockets;
+
+        document.getElementById("space-status").textContent =
+            "SATELLITE SUCCESSFULLY DEPLOYED!";
+    } else {
+        document.getElementById("space-status").textContent =
+            "ROCKET FLEET EMPTY!";
+    }
+}
+
+function launchMission() {
+    if (rockets > 0) {
+        rockets--;
+
+        document.getElementById("rockets").textContent =
+            rockets;
+
+        moon++;
+
+        document.getElementById("moon").textContent =
+            moon;
+
+        document.getElementById("space-status").textContent =
+            "NEW LUNAR MISSION INITIATED!";
+    } else {
+        document.getElementById("space-status").textContent =
+            "INSUFFICIENT ROCKET FLEET!";
+    }
+}
+
+let security = 98;
+let protection = 95;
+let disaster = 90;
+let monitoring = 85;
+let emergency = 120;
+
+function improveSecurity() {
+
+    security = Math.min(100, security + 1);
+    protection = Math.min(100, protection + 1);
+    monitoring = Math.min(100, monitoring + 2);
+
+    document.getElementById("security").textContent = security;
+    document.getElementById("protection").textContent = protection + "%";
+    document.getElementById("monitoring").textContent = monitoring + "%";
+
+    document.getElementById("defense-status").textContent =
+        "SECURITY SYSTEM SUCCESSFULLY UPGRADED!";
+}
+
+function disasterSimulation() {
+
+    disaster = Math.min(100, disaster + 2);
+    emergency += 5;
+
+    document.getElementById("disaster").textContent = disaster + "%";
+    document.getElementById("emergency").textContent = emergency;
+
+    document.getElementById("defense-status").textContent =
+        "DISASTER RESPONSE CAPACITY IMPROVED!";
+}
+</script>
+
+</body>
+</html>
